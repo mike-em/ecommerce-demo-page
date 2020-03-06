@@ -1,0 +1,24 @@
+.collection-item {
+  position: relative;
+
+  .custom-button {
+    position: absolute;
+    top: 255px;
+    opacity: 0;
+    transition: 100ms ease-in-out;
+    color: black;
+    border-radius: 2px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    .custom-button {
+      opacity: 0.85;
+      transition: 200ms ease-in-out;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
