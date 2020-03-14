@@ -15,12 +15,18 @@ import {
 } from '../../redux/cart/cart.selectors';
 
 const CheckoutPage = styled.div`
-  width: 55%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 0;
+  margin: 50px auto;
+
+  @media (min-width: 350px) {
+    width: 95%;
+  }
+  @media (min-width: 768px) {
+    width: 55%;
+  }
 
   & button {
     margin-left: auto;
@@ -83,7 +89,9 @@ const Checkout = ({ cartItems, total, clearAllItems }) => {
         <span style={{ textTransform: 'uppercase' }}>total: £{total}</span>
       </Total>
       <StripeCheckoutButton price={total} clearAll={clearAllItems} />
-      <p>To test checkout please use the following payment detais:</p>
+      <p style={{ marginTop: '30px' }}>
+        To test checkout please use the following payment detais:
+      </p>
       <p>Card Number: 4242 4242 4242 4242</p>
       <p>
         Date: 09/23 <span style={{ marginLeft: '50px' }}> CVC: 123</span>
