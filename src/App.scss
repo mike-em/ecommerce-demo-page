@@ -9,6 +9,10 @@
 
 body {
   padding: 20px 40px;
+
+  @media (max-width: 650px) {
+    padding: 20px 5px;
+  }
 }
 
 *::-webkit-scrollbar {

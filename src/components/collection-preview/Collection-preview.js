@@ -14,8 +14,20 @@ const Title = styled.h1`
 `;
 
 const Preview = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 10px;
+
+  @media (min-width: 350px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 430px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `;
 
 const CollectionPreview = ({ title, items }) => {

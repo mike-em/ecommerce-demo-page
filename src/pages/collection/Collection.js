@@ -16,9 +16,24 @@ const Title = styled.h2`
 `;
 const Items = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 30px;
+
+  @media (min-width: 350px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 430px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `;
 
 const Collection = ({ collection }) => {
@@ -36,7 +51,7 @@ const Collection = ({ collection }) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  collection: selectCollection(ownProps.match.params.collectionId)(state)
+  collection: selectCollection(ownProps.match.params.collectionId)(state),
 });
 
 export default connect(mapStateToProps)(Collection);

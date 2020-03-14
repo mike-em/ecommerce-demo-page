@@ -13,14 +13,14 @@ import { selectCurrentUser } from '../../redux/user/user.selector';
 
 const HeaderWrapper = styled.div`
   height: 70px;
-  width: 100%;
+  max-width: 100vw;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
 `;
 
 const Options = styled.div`
-  width: 50;
+  /* width: 70px; */
   height: 100%;
   display: flex;
   align-items: center;
@@ -30,24 +30,24 @@ const Options = styled.div`
 const linkStyle = {
   padding: '10px 15px',
   textTransform: 'uppercase',
-  cursor: 'pointer'
+  cursor: 'pointer',
 };
 
 const Header = ({ currentUser, hidden }) => {
   return (
     <HeaderWrapper>
-      <Link to="/">
+      <Link to='/'>
         <Logo
-          className="logo"
+          className='logo'
           style={{
             height: '100%',
             width: '70px',
-            padding: '10px'
+            padding: '10px',
           }}
         />
       </Link>
       <Options>
-        <Link to="/shop" style={linkStyle}>
+        <Link to='/shop' style={linkStyle}>
           shop
         </Link>
         {/* <Link to="/contact" style={linkStyle}>
@@ -58,7 +58,7 @@ const Header = ({ currentUser, hidden }) => {
             sign out
           </div>
         ) : (
-          <Link to="/signin" style={linkStyle}>
+          <Link to='/signin' style={linkStyle}>
             sign in
           </Link>
         )}
@@ -71,7 +71,7 @@ const Header = ({ currentUser, hidden }) => {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  hidden: selectCartHidden
+  hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);

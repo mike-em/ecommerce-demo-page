@@ -15,7 +15,7 @@ const Image = styled.div`
 `;
 
 const CollItem = styled.div`
-  width: 22vw;
+  /* width: 22vw; */
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -49,13 +49,13 @@ const Price = styled.div`
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
   return (
-    <CollItem className="collection-item">
+    <CollItem className='collection-item'>
       <Image style={{ backgroundImage: `url(${imageUrl})` }} />
-      <CollFooter className="collection-footer">
-        <Name className="name">{name}</Name>
-        <Price className="price">£{price}</Price>
+      <CollFooter className='collection-footer'>
+        <Name className='name'>{name}</Name>
+        <Price className='price'>£{price}</Price>
       </CollFooter>
-      <Button onClick={() => addItem(item)} inverted className="custom-button">
+      <Button onClick={() => addItem(item)} inverted className='custom-button'>
         Add to cart
       </Button>
     </CollItem>
@@ -63,7 +63,7 @@ const CollectionItem = ({ item, addItem }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+  addItem: item => dispatch(addItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(CollectionItem);

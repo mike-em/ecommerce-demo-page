@@ -24,7 +24,7 @@ const Directory = ({ sections }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  sections: selectDirecotrySections
+  sections: selectDirecotrySections,
 });
 
 export default connect(mapStateToProps)(Directory);
