@@ -79,7 +79,7 @@ const Checkout = ({ cartItems, total, clearAllItems }) => {
           <span>price</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>remove</span>
+          <span></span>
         </HeaderBlock>
       </CheckoutHeader>
       {cartItems.map(cartItem => (
